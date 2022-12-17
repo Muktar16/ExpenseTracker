@@ -1,19 +1,39 @@
-import ExpenseItem from "./components/ExpenseItem";
+import React from 'react';
+import Expenses from "./components/Expenses/Expenses";
 
-function App(){
-    
-    let expenseDate = new Date(2022,12,17);
-    let expenseTitle = "School Fees";
-    let expenseAmount = 300;
+const App = () => {
+    let expenses = [
+        {
+            id:'e1',
+            title:'School Fee',
+            amount:'400',
+            date: new Date(2022,12,2)
+        },
+        {
+            id:'e2',
+            title:'Books Fee',
+            amount:'500',
+            date:new  Date(2022,12,5)
+        },
+        {
+            id:'e3',
+            title:'House rent Fee',
+            amount:'700',
+            date: new Date(2022,12,7)
+        },
+        {
+            id:'e4',
+            title:'Foods',
+            amount:'540',
+            date: new Date(2022,12,10)
+        }
+
+    ]
 
    return(
     <div>
         <h2>Let's get Started</h2>
-        <ExpenseItem 
-            date={expenseDate} 
-            title={expenseTitle} 
-            amount={expenseAmount}>
-        </ExpenseItem>
+        <Expenses expenses={expenses}></Expenses>
    </div>
    )
 }
